@@ -24,6 +24,7 @@ TBD
 ## References
 
 - [Crystal Programming Language](http://crystal-lang.org/)
+- [Crystal for Rubyists](http://www.crystalforrubyists.com/)
 
 ## Versions
 
