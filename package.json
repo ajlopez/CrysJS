@@ -1,17 +1,29 @@
-{ "name": "crysjs"
-, "description": "Reducer manager, it can be used in Redux"
-, "keywords": [ "crysjs", "redux", "reducers", "javascript" ]
-, "version": "0.0.1alpha"
-, "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
-, "repository": { "type": "git", "url": "git://github.com/ajlopez/CrysJS.git" }
-, "main": "./lib/crysjs.js"
-, "engines": { "node": ">= 0.10.0" }
-, "scripts": {
+{
+  "name": "crysjs",
+  "description": "Reducer manager, it can be used in Redux",
+  "keywords": [
+    "crysjs",
+    "redux",
+    "reducers",
+    "javascript"
+  ],
+  "version": "0.0.1alpha",
+  "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ajlopez/CrysJS.git"
+  },
+  "main": "./lib/crysjs.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
     "test": "simpleunit test -r"
-  }
-, "dependencies": {
-  }
-, "devDependencies": {
+  },
+  "dependencies": {
+    "simplegrammar": "0.0.10"
+  },
+  "devDependencies": {
     "simpleunit": "0.0.7"
   }
 }
