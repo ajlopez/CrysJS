@@ -9,6 +9,7 @@ function compile(text, expected, test) {
 
 exports['compile integer'] = function (test) {
     compile('42', '42;', test);
+    compile('42\n\n', '42;', test);
 };
 
 exports['compile string'] = function (test) {
