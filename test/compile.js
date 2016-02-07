@@ -54,3 +54,14 @@ exports['compile def'] = function (test) {
 exports['compile qualified call without arguments'] = function (test) {
     compile('foo.bar', 'foo.bar();', test);
 };
+
+exports['compile arithmetic expressions'] = function (test) {
+    compile('1+2', '1 + 2;', test);
+    compile('1-2', '1 - 2;', test);
+    compile('3*2', '3 * 2;', test);
+    compile('3/2', '3 / 2;', test);
+    compile('1+2+3', '(1 + 2) + 3;', test);
+    compile('1+2*3', '1 + (2 * 3);', test);
+    compile('1/2+3', '(1 / 2) + 3;', test);
+    compile('1/(2+3)', '1 / (2 + 3);', test);
+};
