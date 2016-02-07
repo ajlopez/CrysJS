@@ -22,3 +22,19 @@ exports['compile name'] = function (test) {
 exports['compile assignment'] = function (test) {
     compile('a=1', 'a = 1;', test);
 };
+
+exports['compile assignments'] = function (test) {
+    compile('a=1\nb=a', 'a = 1; b = a;', test);
+};
+
+exports['compile assignments separated by carriage return'] = function (test) {
+    compile('a=1\rb=a', 'a = 1; b = a;', test);
+};
+
+exports['compile assignments separated by carriage return line feed'] = function (test) {
+    compile('a=1\r\nb=a', 'a = 1; b = a;', test);
+};
+
+exports['compile assignments separated by semi colon'] = function (test) {
+    compile('a=1;b=a', 'a = 1; b = a;', test);
+};
