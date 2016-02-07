@@ -88,4 +88,6 @@ exports['compile comparison expressions'] = function (test) {
 exports['compile while expressions'] = function (test) {
     compile('while 1\na+1\nend', 'while (1) a + 1;', test);
     compile('while 1\na+1\nb+2\nend', 'while (1) { a + 1; b + 2; }', test);
-}
+    compile('while true\nputs 1\nend', 'var $crysjs = require("crysjs"); var puts = $crysjs.runtime.puts; while (true) puts(1);', test);
+};
+
