@@ -40,3 +40,12 @@ exports['name expression'] = function (test) {
     test.equal(result.compile(), "foo");
 };
 
+exports['assignment expression'] = function (test) {
+    var result = x.assign(x.name("foo"), x.constant(42));
+    var ctx = contexts.createContext();
+    
+    test.equal(result.evaluate(ctx), 42);
+    test.equal(ctx.getValue('foo'), 42);
+    test.equal(result.compile(), "foo = 42");
+};
+
