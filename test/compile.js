@@ -16,27 +16,27 @@ exports['compile string'] = function (test) {
 };
 
 exports['compile name'] = function (test) {
-    compile('a', 'a;', test);
+    compile('a', 'var a; a;', test);
 };
 
 exports['compile assignment'] = function (test) {
-    compile('a=1', 'a = 1;', test);
+    compile('a=1', 'var a; a = 1;', test);
 };
 
 exports['compile assignments'] = function (test) {
-    compile('a=1\nb=a', 'a = 1; b = a;', test);
+    compile('a=1\nb=a', 'var a; var b; a = 1; b = a;', test);
 };
 
 exports['compile assignments separated by carriage return'] = function (test) {
-    compile('a=1\rb=a', 'a = 1; b = a;', test);
+    compile('a=1\rb=a', 'var a; var b; a = 1; b = a;', test);
 };
 
 exports['compile assignments separated by carriage return line feed'] = function (test) {
-    compile('a=1\r\nb=a\r\n', 'a = 1; b = a;', test);
+    compile('a=1\r\nb=a\r\n', 'var a; var b; a = 1; b = a;', test);
 };
 
 exports['compile assignments separated by semi colon'] = function (test) {
-    compile('a=1;b=a', 'a = 1; b = a;', test);
+    compile('a=1;b=a', 'var a; var b; a = 1; b = a;', test);
 };
 
 exports['compile call'] = function (test) {
