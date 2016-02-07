@@ -43,3 +43,7 @@ exports['compile call'] = function (test) {
     compile('puts "Hello, world"', 'puts("Hello, world");', test);
 };
 
+exports['compile def'] = function (test) {
+    compile('def inc(a)\na+1\nend', 'function inc(a) { return a + 1; }', test);
+};
+
