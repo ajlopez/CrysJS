@@ -40,7 +40,11 @@ exports['compile assignments separated by semi colon'] = function (test) {
 };
 
 exports['compile call'] = function (test) {
-    compile('puts "Hello, world"', 'puts("Hello, world");', test);
+    compile('process "Hello, world"', 'process("Hello, world");', test);
+};
+
+exports['compile runtime call'] = function (test) {
+    compile('puts "Hello, world"', '$crysjs = require("crysjs"); var puts = $crysjs.runtime.puts; puts("Hello, world");', test);
 };
 
 exports['compile def'] = function (test) {
