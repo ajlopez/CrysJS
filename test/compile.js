@@ -15,6 +15,11 @@ exports['compile string'] = function (test) {
     compile('"foo"', '"foo";', test);
 };
 
+exports['compile booleans'] = function (test) {
+    compile('false', 'false;', test);
+    compile('true', 'true;', test);
+};
+
 exports['compile name'] = function (test) {
     compile('a', 'var a; a;', test);
 };
