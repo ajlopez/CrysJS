@@ -38,3 +38,8 @@ exports['compile assignments separated by carriage return line feed'] = function
 exports['compile assignments separated by semi colon'] = function (test) {
     compile('a=1;b=a', 'a = 1; b = a;', test);
 };
+
+exports['compile call'] = function (test) {
+    compile('puts "Hello, world"', 'puts("Hello, world");', test);
+};
+
