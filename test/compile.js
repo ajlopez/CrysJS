@@ -20,6 +20,10 @@ exports['compile booleans'] = function (test) {
     compile('true', 'true;', test);
 };
 
+exports['compile nil'] = function (test) {
+    compile('nil', 'null;', test);
+};
+
 exports['compile name'] = function (test) {
     compile('a', 'var a; a;', test);
 };
