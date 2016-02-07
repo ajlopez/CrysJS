@@ -47,3 +47,6 @@ exports['compile def'] = function (test) {
     compile('def inc(a)\na+1\nend', 'function inc(a) { return a + 1; }', test);
 };
 
+exports['compile qualified call without arguments'] = function (test) {
+    compile('foo.bar', 'foo.bar();', test);
+};
