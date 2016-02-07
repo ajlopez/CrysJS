@@ -83,3 +83,8 @@ exports['compile comparison expressions'] = function (test) {
     compile('1+2<3', '(1 + 2) < 3;', test);
     compile('1>2+3', '1 > (2 + 3);', test);
 };
+
+exports['compile while expressions'] = function (test) {
+    compile('while 1\na+1\nend', 'while (1) a + 1;', test);
+    compile('while 1\na+1\nb+2\nend', 'while (1) { a + 1; b + 2; }', test);
+}
