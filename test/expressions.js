@@ -49,3 +49,12 @@ exports['assignment expression'] = function (test) {
     test.equal(result.compile(), "foo = 42");
 };
 
+exports['call expression'] = function (test) {
+    var result = x.call('inc', [x.constant(41)]);
+    var ctx = contexts.createContext();
+    ctx.setLocalValue('inc', function (value) { return value + 1; });
+    
+    test.equal(result.evaluate(ctx), 42);
+    test.equal(result.compile(), "inc(41)");
+};
+
