@@ -37,6 +37,18 @@ exports['Get real'] = function (test) {
     test.equal(parser.parse("Real"), null);
 }
 
+exports['Get negative real'] = function (test) {
+    var parser = parsers.createParser("-123.45");
+    
+    var result = parser.parse("Real");
+    
+    test.ok(result);
+    test.equal(result.value.evaluate(null), -123.45);
+    test.equal(result.type, "Real");
+    
+    test.equal(parser.parse("Real"), null);
+}
+
 exports['Get integer with spaces'] = function (test) {
     var parser = parsers.createParser("  123   s");
     
