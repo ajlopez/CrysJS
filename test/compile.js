@@ -4,7 +4,7 @@ var crjs = require('..');
 function compile(text, expected, test) {
     var result = crjs.compile(text);
     test.ok(result);
-    test.equal(result.expected);
+    test.equal(result, expected);
 };
 
 exports['compile integer'] = function (test) {
@@ -32,7 +32,7 @@ exports['compile assignments separated by carriage return'] = function (test) {
 };
 
 exports['compile assignments separated by carriage return line feed'] = function (test) {
-    compile('a=1\r\nb=a', 'a = 1; b = a;', test);
+    compile('a=1\r\nb=a\r\n', 'a = 1; b = a;', test);
 };
 
 exports['compile assignments separated by semi colon'] = function (test) {
