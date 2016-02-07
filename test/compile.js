@@ -14,3 +14,7 @@ exports['compile integer'] = function (test) {
 exports['compile string'] = function (test) {
     compile('"foo"', '"foo";', test);
 };
+
+exports['compile name'] = function (test) {
+    compile('a', 'a;', test);
+};
