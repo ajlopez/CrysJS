@@ -74,3 +74,12 @@ exports['compile arithmetic expressions'] = function (test) {
     compile('1/2+3', '(1 / 2) + 3;', test);
     compile('1/(2+3)', '1 / (2 + 3);', test);
 };
+
+exports['compile comparison expressions'] = function (test) {
+    compile('1<2', '1 < 2;', test);
+    compile('1>2', '1 > 2;', test);
+    compile('1<=2', '1 <= 2;', test);
+    compile('1>=2', '1 >= 2;', test);
+    compile('1+2<3', '(1 + 2) < 3;', test);
+    compile('1>2+3', '1 > (2 + 3);', test);
+};
