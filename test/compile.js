@@ -18,3 +18,7 @@ exports['compile string'] = function (test) {
 exports['compile name'] = function (test) {
     compile('a', 'a;', test);
 };
+
+exports['compile assignment'] = function (test) {
+    compile('a=1', 'a = 1;', test);
+};
