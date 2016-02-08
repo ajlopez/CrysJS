@@ -54,7 +54,7 @@ exports['compile call'] = function (test) {
 };
 
 exports['compile runtime call'] = function (test) {
-    compile('puts "Hello, world"', '$crysjs = require("crysjs"); var puts = $crysjs.runtime.puts; puts("Hello, world");', test);
+    compile('puts "Hello, world"', 'var $crysjs = require("crysjs"); var puts = $crysjs.runtime.puts; puts("Hello, world");', test);
 };
 
 exports['compile def'] = function (test) {
