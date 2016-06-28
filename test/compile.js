@@ -88,6 +88,10 @@ exports['compile logical or expression'] = function (test) {
     compile('1 || 2', '1 || 2;', test);
 };
 
+exports['compile binary and expression'] = function (test) {
+    compile('1 & 2', '1 & 2;', test);
+};
+
 exports['compile comparison expressions'] = function (test) {
     compile('1<2', '1 < 2;', test);
     compile('1>2', '1 > 2;', test);
