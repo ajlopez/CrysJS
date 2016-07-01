@@ -100,6 +100,10 @@ exports['compile binary xor expression'] = function (test) {
     compile('1 ^ 2', '1 ^ 2;', test);
 };
 
+exports['compile left shift expression'] = function (test) {
+    compile('1 << 2', '1 << 2;', test);
+};
+
 exports['compile comparison expressions'] = function (test) {
     compile('1<2', '1 < 2;', test);
     compile('1>2', '1 > 2;', test);
