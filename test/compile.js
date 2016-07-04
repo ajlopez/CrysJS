@@ -112,6 +112,10 @@ exports['compile binary not expression'] = function (test) {
     compile('~1', '~1;', test);
 };
 
+exports['compile power expression'] = function (test) {
+    compile('2 ** 3', 'Math.pow(2, 3);', test);
+};
+
 exports['compile comparison expressions'] = function (test) {
     compile('1<2', '1 < 2;', test);
     compile('1>2', '1 > 2;', test);
