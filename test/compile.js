@@ -116,6 +116,10 @@ exports['compile power expression'] = function (test) {
     compile('2 ** 3', 'Math.pow(2, 3);', test);
 };
 
+exports['compile equal expression'] = function (test) {
+    compile('2 == 3', '2 == 3;', test);
+};
+
 exports['compile not equal expression'] = function (test) {
     compile('2 != 3', '2 != 3;', test);
 };
