@@ -139,6 +139,11 @@ exports['compile while expressions'] = function (test) {
     compile('while true\nputs 1\nend', 'var $crysjs = require("crysjs"); var puts = $crysjs.runtime.puts; while (true) puts(1);', test);
 };
 
+exports['compile indexed expressions'] = function (test) {
+    compile('foo[1]', 'foo[1];', test);
+    compile('foo[1,2]', 'foo[1, 2];', test);
+};
+
 exports['compile keyword expression'] = function (test) {
     compile(':foo', '"foo";', test);
 };
