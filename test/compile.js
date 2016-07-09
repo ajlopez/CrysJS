@@ -145,6 +145,6 @@ exports['compile indexed expressions'] = function (test) {
 };
 
 exports['compile keyword expression'] = function (test) {
-    compile(':foo', '"foo";', test);
+    compile(':foo', '":foo";', test);
 };
 

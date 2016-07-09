@@ -163,7 +163,6 @@ exports['Get keyword'] = function (test) {
     var result = parser.parse("Keyword");
     
     test.ok(result);
-    test.equal(result.value.getName(), ":foo");
     test.equal(result.type, "Keyword");
     
     test.equal(parser.parse("Keyword"), null);
@@ -175,7 +174,6 @@ exports['Get keyword as Term'] = function (test) {
     var result = parser.parse("Term");
     
     test.ok(result);
-    test.equal(result.value.getName(), ":foo");
     test.equal(result.type, "Term");
     
     test.equal(parser.parse("Term"), null);
