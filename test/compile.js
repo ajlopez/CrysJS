@@ -144,6 +144,11 @@ exports['compile indexed expressions'] = function (test) {
     compile('foo[1,2]', 'foo[1, 2];', test);
 };
 
+exports['compile array expressions'] = function (test) {
+    compile('[1,2]', '[1, 2];', test);
+    compile('[1]', '[1];', test);
+};
+
 exports['compile keyword expression'] = function (test) {
     compile(':foo', '":foo";', test);
 };
