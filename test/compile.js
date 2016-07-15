@@ -33,6 +33,10 @@ exports['compile assignment'] = function (test) {
     compile('a=1', 'var a; a = 1;', test);
 };
 
+exports['compile assignment expression'] = function (test) {
+    compile('a=1+2', 'var a; a = 1 + 2;', test);
+};
+
 exports['compile assignments'] = function (test) {
     compile('a=1\nb=a', 'var a; var b; a = 1; b = a;', test);
 };
