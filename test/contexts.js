@@ -7,11 +7,18 @@ exports['has local value of unknown variablle'] = function (test) {
     test.equal(context.hasLocalValue('foo'), false);
 };
 
+exports['has value of unknown variablle'] = function (test) {
+    var context = contexts.createContext();
+    
+    test.equal(context.hasValue('foo'), false);
+};
+
 exports['set and get local value'] = function (test) {
     var context = contexts.createContext();
     
     context.setLocalValue('foo', 'bar');
     test.equal(context.hasLocalValue('foo'), true);
+    test.equal(context.hasValue('foo'), true);
     test.equal(context.getLocalValue('foo'), 'bar');
 };
 
@@ -22,6 +29,7 @@ exports['get value from parent'] = function (test) {
     parent.setLocalValue('foo', 'bar');
     test.equal(context.getValue('foo'), 'bar');
     test.equal(context.hasLocalValue('foo'), false);
+    test.equal(context.hasValue('foo'), true);
     test.equal(context.getLocalValue('foo'), null);
     test.equal(parent.hasLocalValue('foo'), true);
     test.equal(parent.getLocalValue('foo'), 'bar');
